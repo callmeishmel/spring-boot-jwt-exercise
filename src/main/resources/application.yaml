@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:${DB_CONNECTION}://${DB_HOST}/${DB_ACTIVE}
+    driver-class-name: ${DB_DRIVER}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Change this to Validate when dealing with the real project DB
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: ${DB_CONNECTION}
+    database-platform: ${DB_PLATFORM}
+  jwt:
+    secret-key: ${JWT_SECRET_KEY}
